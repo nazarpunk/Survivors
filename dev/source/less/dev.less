@@ -1,0 +1,68 @@
+#dev_wrapper {
+    width: 1200px;
+    display: inline-block;
+    text-align: left;
+
+    text-shadow: 0 0 8px black;
+
+    @bg: rgb(18, 18, 18);
+
+    font-family: Roboto, Arial, sans-serif;
+    line-height: 2rem;
+    font-size: 14px;
+
+    color: rgb(240,240,240);
+    margin-top: 0;
+
+    > div {
+	background-color: @bg;
+	border: 1px solid rgb(58,58,58);
+	padding: 12px;
+
+	&:last-child {
+	    margin: 20px 0 20px;
+	}
+    }
+
+    p {
+	margin-top: 0;
+	margin-bottom: 3rem;
+    }
+
+    a {
+	text-decoration: none;
+
+	@c: rgb(0, 190, 140);
+	&,&:active,&:focus {
+	    color: @c;
+	}
+
+	&:hover {
+	    color: darken(@c,10%);
+	}
+    }
+
+    pre,.pre {
+	background-color: darken(@bg,5%);
+	border: 1px dashed gray;
+    }
+
+    blockquote {
+	background-color: lighten(@bg,5%);
+	border: 1px solid gray;
+    }
+
+    pre, .pre, blockquote {
+	padding: 12px;
+	margin: 12px 0 12px;
+    }
+
+}
+
+
+#dev_log {
+
+    &:empty:before {
+	content: 'Здесь будет отображаться история игры';
+    }
+}

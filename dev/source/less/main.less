@@ -1,0 +1,145 @@
+.font('DSEraserCyr');
+.font('GOST');
+.font('ReginaKursiv');
+.font('LesterDeco');
+
+
+/* style */
+html,body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black url(../img/body/bg.jpg) top center repeat;
+    background-attachment: fixed;
+
+    font-family: 'GOST';
+    font-size: 1.2em;
+
+    text-align: center;
+
+    > div {
+	margin: 20px 12px 20px;
+    }
+
+    &.production {
+	white-space: nowrap;
+
+	&:before {
+	    content: '';
+	    display: inline-block;
+	    height: 100%;
+	    vertical-align: middle;
+
+	}
+
+	> div {
+	    white-space: normal;
+	    text-align: left;
+	    vertical-align: middle;
+	}
+
+	#vk-comments-wrap {
+	    display: none;
+	}
+
+    }
+
+
+}
+
+
+#game-wrapper {
+    .relative();
+    display: inline-block;
+    user-select: none;
+
+    & > span {
+	.absolute();
+	display: block;
+	z-index: 1001;
+	pointer-events: none;
+	width: 100%;
+
+	&:before, &:after {
+	    .absolute();
+	    .size(36px,74px);
+	    content: '';
+	    display: block;
+	    background-image: url(../img/body/corners.png);
+	    z-index: 10;
+
+	}
+
+	&:before {left: -4px;}
+	&:after {right: -4px;}
+
+	&:first-child {
+	    top:0;
+
+	    &:before {background-position: top left;}
+	    &:after {background-position: top right;}
+
+	    &:before, &:after {top: 0px;}
+	}
+
+	&:last-child {
+	    bottom:0;
+
+	    &:before {background-position: bottom left;}
+	    &:after {background-position: bottom right;}
+
+	    &:before, &:after {bottom: -4px;}
+	}
+
+    }
+}
+
+@game-width : 1200px;
+@game-height : 800px;
+
+#game-wrap {
+    .size(@game-width,@game-height);
+    .relative();
+    z-index: 1000;
+    border-style: solid;
+    border-width: 11px;
+    border-color: transparent;
+    border-image: url(../img/body/borders.png) 11 fill repeat;
+}
+
+#game {
+    .square(100%);
+    background: black;
+
+}
+
+#game-message {
+    user-select: none;
+    display: inline-block;
+    color: white;
+    padding: 15px 20px;
+    background: black;
+    border-radius: 6px;
+    border: 1px solid gray;
+    text-align: left;
+}
+
+#image-loading {
+    z-index: 1;
+    display: none;
+    overflow: hidden;
+
+    &, & > img {
+	.absolute(0px);
+    }
+}
+
+/* --- vk --- */
+#vk-comments-wrap {
+    width: 1200px;
+    margin: 0 20px 20px;
+    display: inline-block;
+}

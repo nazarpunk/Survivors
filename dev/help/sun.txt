@@ -1,0 +1,25 @@
+/*
+Применим время суток для фонов и персонажей.
+Для этого существует модуль sun который принимает значения: dawn,day,sunset,night.
+Модуль автоматически выберет картинку соответствующую освещению, если таковая имеется.
+*/
+
+sun dawn
+bg sun/forest
+human mr pose01 med smile
+say sun dawn
+
+sun day
+bg sun/forest
+human mr pose01 med smile
+say sun day
+
+sun sunset
+bg sun/forest
+human mr pose01 med smile
+say sun sunset
+
+sun night
+bg sun/forest
+human mr pose01 med smile
+say sun night

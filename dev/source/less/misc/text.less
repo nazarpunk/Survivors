@@ -1,0 +1,49 @@
+@game-text-width: 938px;
+@game-text-height: 126px;
+@game-text-padding: 12px;
+@game-text-name-height: 38px;
+
+#game-text-wrap {
+    .absolute(false,false,20px);
+    z-index: 4;
+    height: @game-text-height;
+    text-align: center;
+    width:100%;
+}
+
+#game-text {
+    text-align: left;
+    display: inline-block;
+    background: url(../img/menu/textblock.png) bottom center no-repeat;
+    width: @game-text-width - (@game-text-padding * 2);
+    padding: @game-text-padding;
+    height: @game-text-height - (@game-text-padding * 2);
+
+}
+
+#game-text-name-wrap {
+    padding-left: (@game-width - @game-text-width) / 2;
+    .absolute((@game-text-name-height + 20) * -1,false);
+    & > div {
+	text-align: left;
+	padding-left: @game-text-padding;
+	background: url(../img/menu/textblock-name.png) center left no-repeat;
+	width: 204px;
+	height: @game-text-name-height;
+
+	&:before {
+	    content:'';
+	    height:100%;
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+    }
+}
+
+#game-text-name {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'ReginaKursiv';
+    font-weight: bold;
+    font-size: 20px;
+}

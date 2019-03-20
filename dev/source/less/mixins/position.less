@@ -1,0 +1,69 @@
+.position(@position: static; @a: null; @b: null; @c: null; @d: null) {
+    position: @position;
+
+    /* 1 */
+    & when not (null = @a) and (null = @b) and (null = @c) and (null = @d) {
+	top: @a;
+	left: @a;
+	right: @a;
+	bottom: @a;
+    }
+
+    /* 2 */
+    & when not (null = @a) and not (null = @b) and (null = @c) and (null = @d) {
+	& when not (false = @a) and not (none = @a) {
+	    top: @a;    
+	}
+	& when not (false = @b) and not (none = @b) {
+	    left: @b;
+	    right: @b;
+	}
+    }
+
+    /* 3 */
+    & when not (null = @a) and not (null = @b) and  not (null = @c) and (null = @d) {
+	& when not (false = @a) and not (none = @a) {
+	    top: @a;    
+	}
+	& when not (false = @b) and not (none = @b) {
+	    left: @b;
+	    right: @b;
+	}
+	& when not (false = @c) and not (none = @c) {
+	    bottom: @c;
+	}
+    }
+
+    /* 4 */
+    & when not (null = @a) and not (null = @b) and  not (null = @c) and not (null = @d) {
+	& when not (false = @a) and not (none = @a) {
+	    top: @a;    
+	}
+	& when not (false = @b) and not (none = @b) {
+	    right: @b;
+	}
+
+	& when not (false = @c) and not (none = @c) {
+	    bottom: @c;
+	}
+
+	& when not (false = @d) and not (none = @d) {
+	    left: @d;
+	}
+    }
+}
+.absolute(@a: null; @b: null; @c: null; @d: null){
+    .position(absolute,@a,@b,@c,@d);
+}
+.relative(@a: null; @b: null; @c: null; @d: null){
+    .position(relative,@a,@b,@c,@d);
+}
+.fixed(@a: null; @b: null; @c: null; @d: null){
+    .position(fixed,@a,@b,@c,@d);
+}
+.static(@a: null; @b: null; @c: null; @d: null){
+    .position(static,@a,@b,@c,@d);
+}
+.sticky(@a: null; @b: null; @c: null; @d: null){
+    .position(sticky,@a,@b,@c,@d);
+}

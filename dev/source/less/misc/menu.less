@@ -1,0 +1,25 @@
+#game-menu {
+    .absolute(0px);
+    z-index: 100;
+    
+    background: black url(../img/menu/diary.png) bottom center no-repeat;
+
+    & .btn {
+	font-family: 'DSEraserCyr';
+	font-size: 40px;
+	cursor: pointer;
+
+	&:hover {
+	    color: red;
+	}
+    }
+}
+
+#game-menu-btn-start {
+    .absolute(110px,false,false,140px);
+}
+
+#game-menu-text {
+    .absolute(170px,false,false,90px);
+    .size(450px,500px);
+}

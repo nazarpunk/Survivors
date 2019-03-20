@@ -1,0 +1,15 @@
+<ifModule mod_headers.c>
+	<FilesMatch "\.(gif|jpg|jpeg|png)$">
+		Header set Cache-Control "max-age=25920000"
+	</FilesMatch>
+</IfModule>
+
+<ifModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/x-icon "access plus 25920000 seconds"
+	ExpiresByType image/jpeg "access plus 25920000 seconds"
+	ExpiresByType image/jpg "access plus 25920000 seconds"
+	ExpiresByType image/png "access plus 25920000 seconds"
+	ExpiresByType image/gif "access plus 25920000 seconds"
+	ExpiresByType application/x-shockwave-flash "access plus 25920000 seconds"
+</ifModule>

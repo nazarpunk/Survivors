@@ -1,0 +1,25 @@
+/*
+Для отрисовки персонажей есть модуль human
+
+Что-бы отрисовать персонажа нужно указать
+
+-Имя персонажа
+-Позу
+-Тип одежды
+-Эмоцию
+-Расположение по вертикали [top | bottom] - если не указано применится bottom
+-Расмоложение gj ujhbpjynfkb [left | center | right]  - если не указано применится center
+
+Параметры следующие после имени персонажа можно указывать в произвольном порядке
+
+
+*/
+
+human mr pose01 med smile left 
+human nd pose01 casual smile 
+human lz pose02 casual smile right
+human vs pose01 cap smile left top
+human pt pose01 jack smile top 
+human ur pose01 black smile right top
+
+Покажем шесть персонажей

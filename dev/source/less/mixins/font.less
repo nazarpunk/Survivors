@@ -1,0 +1,9 @@
+.font(@name){
+    @font-face {
+	font-family: @name;
+	src: url('../fonts/@{name}.woff') format('woff'),
+	    url('../fonts/@{name}.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+    }
+}
